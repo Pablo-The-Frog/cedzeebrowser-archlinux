@@ -7,9 +7,10 @@
 
 ```bash
 sudo pacman -S python python-pyqt6 python-pyqt6-webengine
-
+```
 
 ### Créer le paquet Arch
 
 ```bash
 makepkg -si
+```
