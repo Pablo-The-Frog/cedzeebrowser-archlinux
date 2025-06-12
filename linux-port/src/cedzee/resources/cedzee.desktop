@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Cedzee Browser
+Exec=cedzee-browser
+Icon=cedzee
+Type=Application
+Categories=Network;WebBrowser;
