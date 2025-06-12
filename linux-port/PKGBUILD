@@ -1,0 +1,34 @@
+pkgname=cedzee-browser
+pkgver=1.0
+pkgrel=1
+pkgdesc="A minimalist Python Qt Web browser"
+arch=('any')
+license=('MIT')
+depends=('python' 'python-pyqt5' 'python-pyqtwebengine')
+source=()
+md5sums=()
+
+build() {
+    cd "$srcdir"
+    echo "Nothing to build."
+}
+
+package() {
+    mkdir -p "$pkgdir/usr/bin"
+    mkdir -p "$pkgdir/usr/share/applications"
+    mkdir -p "$pkgdir/usr/share/icons/hicolor/128x128/apps"
+
+    # Script launcher
+    echo -e "#!/bin/bash\npython3 /usr/share/cedzee/__main__.py" > "$pkgdir/usr/bin/cedzee-browser"
+    chmod +x "$pkgdir/usr/bin/cedzee-browser"
+
+    # Copy Python app
+   cp -r "$srcdir/cedzee" "$pkgdir/usr/share/"
+
+    # Desktop entry
+    cp "$srcdir/cedzee/resources/cedzee.desktop" "$pkgdir/usr/share/applications/"
+
+    # Icon
+    cp "$srcdir/cedzee/resources/cedzee.png" "$pkgdir/usr/share/icons/hicolor/128x128/apps/cedzee.png"
+}
+
