@@ -1,27 +1,15 @@
 
-# CEDZEE Search
+# CEDZEE Search Port Linux 
 
-## Utilisation
+**Version adaptée pour Arch Linux** du navigateur Cedzee original
 
-```sh
-pip install -r requirements.txt
-py ./main.py
-```
+### Installation des dépendances
 
-## Organisation du code
+```bash
+sudo pacman -S python python-pyqt6 python-pyqt6-webengine
 
-```txt
-./
-├── main.py
-├── theme
-│   ├── background.svg
-│   └── theme.css
-└── web
-    ├── index.html
-    └── logic.js
-```
 
-## Themes
+### Créer le paquet Arch
 
-`theme.css`: Feuille de style pour le theme du moteur de recherche
-`background.svg`: Fond d'écran du moteur de recherche
+```bash
+makepkg -si
